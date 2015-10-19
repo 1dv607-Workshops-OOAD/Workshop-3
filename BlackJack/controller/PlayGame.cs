@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BlackJack.view;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,22 +20,32 @@ namespace BlackJack.controller
                 a_view.DisplayGameOver(a_game.IsDealerWinner());
             }
 
-            int input = a_view.GetInput();
+            MasterView.MenuChoice input = a_view.GetMenuChoice();
+            Console.WriteLine("Enum:" + input);
 
-            if (input == 'p')
+            if (input == MasterView.MenuChoice.Play)
             {
                 a_game.NewGame();
             }
-            else if (input == 'h')
+            else if (input == MasterView.MenuChoice.Hit)
             {
                 a_game.Hit();
             }
-            else if (input == 's')
+            else if (input == MasterView.MenuChoice.Stand)
             {
                 a_game.Stand();
             }
 
-            return input != 'q';
+            return input != MasterView.MenuChoice.Quit;
+
+            //if (input == MasterView.MenuChoice.Quit)
+            //{
+            //    return false;
+            //}
+            //else
+            //{
+            //    return true;
+            //}
         }
     }
 }

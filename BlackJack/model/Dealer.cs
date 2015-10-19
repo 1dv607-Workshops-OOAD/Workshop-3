@@ -46,6 +46,19 @@ namespace BlackJack.model
             return false;
         }
 
+        public bool Stand() { 
+            if(m_deck != null){
+                ShowHand();
+
+                foreach(Card card in GetHand().ToList<Card>()){
+                    card.Show(true);
+                }
+
+                return true;
+            }
+            return false;
+        }
+
         public bool IsDealerWinner(Player a_player)
         {
             if (a_player.CalcScore() > g_maxScore)

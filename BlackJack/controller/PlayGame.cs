@@ -21,7 +21,6 @@ namespace BlackJack.controller
             }
 
             MasterView.MenuChoice input = a_view.GetMenuChoice();
-            Console.WriteLine("Enum:" + input);
 
             if (input == MasterView.MenuChoice.Play)
             {
@@ -29,7 +28,12 @@ namespace BlackJack.controller
             }
             else if (input == MasterView.MenuChoice.Hit)
             {
-                a_game.Hit();
+                Observer observer = new Observer();
+                PausEvent pauseEvent = new PausEvent();
+                if (a_game.Hit()) {
+                    observer.EventTrigged += pauseEvent.Pause;
+                    observer.TriggedEvent();
+                }
             }
             else if (input == MasterView.MenuChoice.Stand)
             {

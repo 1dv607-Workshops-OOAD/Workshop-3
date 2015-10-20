@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BlackJack.model.rules
 {
-    class Soft17Strategy
+    class Soft17Strategy : IHitStrategy
     {
         private const int g_hitLimit = 17;
 

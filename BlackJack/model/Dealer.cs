@@ -6,7 +6,7 @@ using System.Text;
 
 namespace BlackJack.model
 {
-    class Dealer : Player
+    class Dealer : Player, BlackJackObserver
     {
         private Deck m_deck = null;
         private const int g_maxScore = 21;
@@ -15,12 +15,15 @@ namespace BlackJack.model
         private rules.IHitStrategy m_hitRule;
         private rules.IWinnerStrategy m_winnerRule;
 
+        List<BlackJackObserver> m_observers;
+
 
         public Dealer(rules.RulesFactory a_rulesFactory)
         {
             m_newGameRule = a_rulesFactory.GetNewGameRule();
             m_hitRule = a_rulesFactory.GetHitRule();
             m_winnerRule = a_rulesFactory.GetWinnerRule();
+            m_observers = new List<BlackJackObserver>();
         }
 
         
@@ -53,6 +56,12 @@ namespace BlackJack.model
             c.Show(showHiddenCard);
             a_player.AddCardToHand(c);
         }
+
+        public void AddSubscriber(BlackJackObserver a_sub)
+        {
+            m_observers.Add(a_sub);
+        }
+
 
         public bool Stand() { 
             if(m_deck != null){

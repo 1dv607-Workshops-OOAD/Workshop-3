@@ -2,4 +2,3 @@ C:\Users\Lisa\Documents\GitHub\1dv607\Workshop-3\BlackJack\bin\Debug\BlackJack.e
 C:\Users\Lisa\Documents\GitHub\1dv607\Workshop-3\BlackJack\bin\Debug\BlackJack.pdb
 C:\Users\Lisa\Documents\GitHub\1dv607\Workshop-3\BlackJack\obj\Debug\BlackJack.exe
 C:\Users\Lisa\Documents\GitHub\1dv607\Workshop-3\BlackJack\obj\Debug\BlackJack.pdb
-C:\Users\Lisa\Documents\GitHub\1dv607\Workshop-3\BlackJack\obj\Debug\BlackJack.csprojResolveAssemblyReference.cache

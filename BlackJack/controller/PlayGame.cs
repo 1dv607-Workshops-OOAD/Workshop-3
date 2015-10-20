@@ -1,4 +1,5 @@
-﻿using BlackJack.view;
+﻿using BlackJack.model;
+using BlackJack.view;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,10 +7,12 @@ using System.Text;
 
 namespace BlackJack.controller
 {
-    class PlayGame
+    class PlayGame : BlackJackObserver
     {
         public bool Play(model.Game a_game, view.IView a_view)
         {
+            a_game.AddSubscriber(this);
+
             a_view.DisplayWelcomeMessage();
             
             a_view.DisplayDealerHand(a_game.GetDealerHand(), a_game.GetDealerScore());
@@ -28,22 +31,18 @@ namespace BlackJack.controller
             }
             else if (input == MasterView.MenuChoice.Hit)
             {
-                Observer observer = new Observer();
-                PausEvent pauseEvent = new PausEvent();
-                observer.EventTrigged += pauseEvent.Pause;
-                observer.TriggedEvent();
                 a_game.Hit();
             }
             else if (input == MasterView.MenuChoice.Stand)
             {
-                Observer observer = new Observer();
-                PausEvent pauseEvent = new PausEvent();
-                observer.EventTrigged += pauseEvent.Pause;
-                observer.TriggedEvent();
                 a_game.Stand();
             }
 
             return input != MasterView.MenuChoice.Quit;
+        }
+
+        public void DealCard(bool showHiddenCard, Player a_player) {
+            //a_view.DisplayCard(model.Card a_card);
         }
     }
 }

@@ -9,16 +9,6 @@ namespace BlackJack.view
     class SimpleView : MasterView, IView
     {
 
-        //foreach (model.Card c in a_hand.ToList()) { 
-        //    if (c == a_hand.Last())
-        //    {
-        //        Observer observer = new Observer();
-        //        PausEvent pauseEvent = new PausEvent();
-        //        observer.EventTrigged += pauseEvent.Pause;
-        //        observer.TriggedEvent();
-        //    }
-        //    }
-
         public void DisplayWelcomeMessage()
         {
             System.Console.Clear();
@@ -28,6 +18,7 @@ namespace BlackJack.view
 
         public void DisplayCard(model.Card a_card)
         {
+            //System.Threading.Thread.Sleep(2000);
             System.Console.WriteLine("{0} of {1}", a_card.GetValue(), a_card.GetColor());
         }
 

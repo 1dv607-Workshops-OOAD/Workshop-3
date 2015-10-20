@@ -9,8 +9,7 @@ namespace BlackJack.view
     {
         public void Pause(object sender, EventArgs args)
         {
-            Console.Beep();
-            int pauseTime = 1000;
+            int pauseTime = 500;
             System.Threading.Thread.Sleep(pauseTime);
         }
     }

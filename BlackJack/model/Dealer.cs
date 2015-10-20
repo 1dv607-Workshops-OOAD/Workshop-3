@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BlackJack.view;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,6 +22,8 @@ namespace BlackJack.model
             m_hitRule = a_rulesFactory.GetHitRule();
             m_winnerRule = a_rulesFactory.GetWinnerRule();
         }
+
+        
 
         public bool NewGame(Player a_player)
         {

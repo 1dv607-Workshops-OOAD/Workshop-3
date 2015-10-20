@@ -30,13 +30,16 @@ namespace BlackJack.controller
             {
                 Observer observer = new Observer();
                 PausEvent pauseEvent = new PausEvent();
-                if (a_game.Hit()) {
-                    observer.EventTrigged += pauseEvent.Pause;
-                    observer.TriggedEvent();
-                }
+                observer.EventTrigged += pauseEvent.Pause;
+                observer.TriggedEvent();
+                a_game.Hit();
             }
             else if (input == MasterView.MenuChoice.Stand)
             {
+                Observer observer = new Observer();
+                PausEvent pauseEvent = new PausEvent();
+                observer.EventTrigged += pauseEvent.Pause;
+                observer.TriggedEvent();
                 a_game.Stand();
             }
 

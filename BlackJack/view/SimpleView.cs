@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BlackJack.model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,6 +8,16 @@ namespace BlackJack.view
 {
     class SimpleView : MasterView, IView
     {
+
+        //foreach (model.Card c in a_hand.ToList()) { 
+        //    if (c == a_hand.Last())
+        //    {
+        //        Observer observer = new Observer();
+        //        PausEvent pauseEvent = new PausEvent();
+        //        observer.EventTrigged += pauseEvent.Pause;
+        //        observer.TriggedEvent();
+        //    }
+        //    }
 
         public void DisplayWelcomeMessage()
         {
@@ -33,7 +44,7 @@ namespace BlackJack.view
         private void DisplayHand(String a_name, IEnumerable<model.Card> a_hand, int a_score)
         {
             System.Console.WriteLine("{0} Has: ", a_name);
-            foreach (model.Card c in a_hand)
+            foreach (model.Card c in a_hand.ToList())
             {
                 DisplayCard(c);
             }

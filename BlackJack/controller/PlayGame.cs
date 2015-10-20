@@ -37,15 +37,6 @@ namespace BlackJack.controller
             }
 
             return input != MasterView.MenuChoice.Quit;
-
-            //if (input == MasterView.MenuChoice.Quit)
-            //{
-            //    return false;
-            //}
-            //else
-            //{
-            //    return true;
-            //}
         }
     }
 }

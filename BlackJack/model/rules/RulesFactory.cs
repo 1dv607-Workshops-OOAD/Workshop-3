@@ -18,5 +18,10 @@ namespace BlackJack.model.rules
             //Choose to return AmericanNewGameStrategy or InternationalNewGameStrategy
             return new AmericanNewGameStrategy();
         }
+
+        public IWinnerStrategy GetWinnerRule() {
+            //Choose to return IsDealerWinnerStrategy or IsPlayerWinnerStrategy
+            return new IsDealerWinnerStrategy();
+        } 
     }
 }

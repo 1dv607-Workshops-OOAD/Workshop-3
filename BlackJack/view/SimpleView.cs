@@ -18,7 +18,6 @@ namespace BlackJack.view
 
         public void DisplayCard(model.Card a_card)
         {
-            //System.Threading.Thread.Sleep(2000);
             System.Console.WriteLine("{0} of {1}", a_card.GetValue(), a_card.GetColor());
         }
 
@@ -32,7 +31,7 @@ namespace BlackJack.view
             DisplayHand("Dealer", a_hand, a_score);
         }
 
-        private void DisplayHand(String a_name, IEnumerable<model.Card> a_hand, int a_score)
+        public void DisplayHand(String a_name, IEnumerable<model.Card> a_hand, int a_score)
         {
             System.Console.WriteLine("{0} Has: ", a_name);
             foreach (model.Card c in a_hand.ToList())

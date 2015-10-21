@@ -9,40 +9,49 @@ namespace BlackJack.controller
 {
     class PlayGame : BlackJackObserver
     {
-        public bool Play(model.Game a_game, view.IView a_view)
+        private IView m_view;
+        private Game m_game;
+
+        public PlayGame(IView a_view, Game a_game)
         {
-            a_game.AddSubscriber(this);
+            m_view = a_view;
+            m_game = a_game;
+        }
 
-            a_view.DisplayWelcomeMessage();
-            
-            a_view.DisplayDealerHand(a_game.GetDealerHand(), a_game.GetDealerScore());
-            a_view.DisplayPlayerHand(a_game.GetPlayerHand(), a_game.GetPlayerScore());
+        public bool Play()
+        {
+            m_view.DisplayWelcomeMessage();
 
-            if (a_game.IsGameOver())
+            m_view.DisplayDealerHand(m_game.GetDealerHand(), m_game.GetDealerScore());
+            m_view.DisplayPlayerHand(m_game.GetPlayerHand(), m_game.GetPlayerScore());
+
+            if (m_game.IsGameOver())
             {
-                a_view.DisplayGameOver(a_game.IsDealerWinner());
+                m_view.DisplayGameOver(m_game.IsDealerWinner());
             }
 
-            MasterView.MenuChoice input = a_view.GetMenuChoice();
+            MasterView.MenuChoice input = m_view.GetMenuChoice();
 
             if (input == MasterView.MenuChoice.Play)
             {
-                a_game.NewGame();
+                m_game.AddSubscriber(this);
+                m_game.NewGame();
             }
             else if (input == MasterView.MenuChoice.Hit)
             {
-                a_game.Hit();
+                m_game.Hit();
             }
             else if (input == MasterView.MenuChoice.Stand)
             {
-                a_game.Stand();
+                m_game.Stand();
             }
 
             return input != MasterView.MenuChoice.Quit;
         }
 
-        public void DealCard(bool showHiddenCard, Player a_player) {
-            //a_view.DisplayCard(model.Card a_card);
+        public void CardIsDealt(model.Card a_card) 
+        {
+            m_view.DisplayCard(a_card);
         }
     }
 }

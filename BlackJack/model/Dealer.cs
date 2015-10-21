@@ -6,7 +6,7 @@ using System.Text;
 
 namespace BlackJack.model
 {
-    class Dealer : Player, BlackJackObserver
+    class Dealer : Player
     {
         private Deck m_deck = null;
         private const int g_maxScore = 21;
@@ -55,6 +55,13 @@ namespace BlackJack.model
             c = m_deck.GetCard();
             c.Show(showHiddenCard);
             a_player.AddCardToHand(c);
+
+            //foreach (BlackJackObserver o in m_observers)
+            //{   
+            //    o.CardIsDealt(c);
+            //}
+            
+            System.Threading.Thread.Sleep(2000);
         }
 
         public void AddSubscriber(BlackJackObserver a_sub)

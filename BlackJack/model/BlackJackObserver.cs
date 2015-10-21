@@ -7,6 +7,6 @@ namespace BlackJack.model
 {
     interface BlackJackObserver
     {
-        void DealCard(bool showHiddenCard, Player a_player);
+        void CardIsDealt(model.Card a_card);
     }
 }

@@ -15,8 +15,7 @@ namespace BlackJack.model
         private rules.IHitStrategy m_hitRule;
         private rules.IWinnerStrategy m_winnerRule;
 
-        List<BlackJackObserver> m_observers;
-
+        private List<BlackJackObserver> m_observers;
 
         public Dealer(rules.RulesFactory a_rulesFactory)
         {
@@ -25,8 +24,6 @@ namespace BlackJack.model
             m_winnerRule = a_rulesFactory.GetWinnerRule();
             m_observers = new List<BlackJackObserver>();
         }
-
-        
 
         public bool NewGame(Player a_player)
         {
@@ -60,15 +57,12 @@ namespace BlackJack.model
             {   
                 o.CardIsDealt(c);
             }
-            
-            //System.Threading.Thread.Sleep(2000);
         }
 
         public void AddSubscriber(BlackJackObserver a_sub)
         {
             m_observers.Add(a_sub);
         }
-
 
         public bool Stand() { 
             if(m_deck != null){

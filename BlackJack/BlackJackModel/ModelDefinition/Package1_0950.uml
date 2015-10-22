@@ -33,6 +33,13 @@
               LastKnownName="RulesFactory"
               LastKnownLocation="Package2_0950.uml" />
           </dependency>
+          <dependency
+            Id="426f69e2-28fc-4074-8df9-6565d8771496">
+            <classMoniker
+              Id="a6713820-b5ef-4e7b-9982-6130438f8429"
+              LastKnownName="Card"
+              LastKnownLocation="Package1_0950.uml" />
+          </dependency>
         </suppliersInternal>
         <generalsInternal>
           <generalization
@@ -220,6 +227,126 @@
                   <upperValueInternal>
                     <literalString
                       Id="48f08848-ebfa-43bc-a6aa-b3a51360f5b9"
+                      name="Upper" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="9feb65a7-1f4d-4b7a-a1db-0baab7f469a3"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName="m_winnerRule"
+            isLeaf="false"
+            isAbstract="false">
+            <interfaceMoniker
+              Id="f8e65e75-06e5-4521-8d46-1d10ac84b097"
+              LastKnownName="IWinnerStrategy"
+              LastKnownLocation="Package2_0950.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d9d4e12a-b350-4b34-a968-367f6837c202"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="b3faeb15-5877-4460-9c73-91e7d6203ad4"
+                      name="Lower" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="8a2cafc2-fd6b-41d7-a714-c117a08cdaaf"
+                      name="Upper" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="78b3c5ea-73b2-45d9-a6e6-e4780350395e"
+                  name="m_winnerRule"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="7b54baf9-8f51-4f64-9dcc-e524a73c5262"
+                      name="Lower" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="9f48c486-8266-49cb-917d-a8797cbbe89d"
+                      name="Upper" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="7bf1e782-1d10-4e07-830b-3b9058991d14"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName="m_observers"
+            isLeaf="false"
+            isAbstract="false">
+            <interfaceMoniker
+              Id="d0f1c4fc-4d61-444e-a220-57cb2c32c9b0"
+              LastKnownName="BlackJackObserver"
+              LastKnownLocation="Package1_0950.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="924d76ae-0a6a-4621-9ae8-239b13b381b9"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="359eb0cc-ce21-46e8-9dfd-9fed5f54a8cd"
+                      name="Lower" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="8a93c171-54d7-4a82-9fa1-00df8f9f212f"
+                      name="Upper" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4a686826-8cd1-497e-8922-baba67c35d0e"
+                  name="m_observers"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="271e7771-327c-4697-bdbc-60312b3d4057"
+                      name="Lower" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="71c6e7bc-f4a4-481d-9b11-3a5bceb612dd"
                       name="Upper" />
                   </upperValueInternal>
                 </memberEnd>
@@ -505,6 +632,13 @@
           </association>
         </targetEnds>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="d0f1c4fc-4d61-444e-a220-57cb2c32c9b0"
+        name="BlackJackObserver"
+        isAbstract="false"
+        isLeaf="false" />
     </packageHasNamedElement>
   </packagedElements>
 </package>

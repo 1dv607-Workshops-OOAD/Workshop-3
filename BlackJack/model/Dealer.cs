@@ -56,12 +56,12 @@ namespace BlackJack.model
             c.Show(showHiddenCard);
             a_player.AddCardToHand(c);
 
-            //foreach (BlackJackObserver o in m_observers)
-            //{   
-            //    o.CardIsDealt(c);
-            //}
+            foreach (BlackJackObserver o in m_observers)
+            {   
+                o.CardIsDealt(c);
+            }
             
-            System.Threading.Thread.Sleep(2000);
+            //System.Threading.Thread.Sleep(2000);
         }
 
         public void AddSubscriber(BlackJackObserver a_sub)

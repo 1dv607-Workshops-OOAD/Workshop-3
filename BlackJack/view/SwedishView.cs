@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BlackJack.view
 {
-    class SwedishView : MasterView, IView
+    class SwedishView : IView
     {
         public void DisplayWelcomeMessage()
         {
@@ -64,7 +64,7 @@ namespace BlackJack.view
 
         public MenuChoice GetMenuChoice()
         {
-            char input = GetInput();
+            char input = Console.ReadKey().KeyChar;
 
             if (input == 'p')
             {

@@ -7,6 +7,6 @@ namespace BlackJack.model
 {
     interface BlackJackObserver
     {
-        void CardIsDealt(model.Card a_card);
+        void CardIsDealt();
     }
 }

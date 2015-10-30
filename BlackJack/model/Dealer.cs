@@ -55,7 +55,7 @@ namespace BlackJack.model
 
             foreach (BlackJackObserver o in m_observers)
             {   
-                o.CardIsDealt(c);
+                o.CardIsDealt(); 
             }
         }
 

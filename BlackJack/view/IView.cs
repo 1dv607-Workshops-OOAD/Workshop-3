@@ -10,7 +10,8 @@ namespace BlackJack.view
         Play,
         Hit,
         Stand,
-        Quit
+        Quit,
+        None
     }
 
     interface IView

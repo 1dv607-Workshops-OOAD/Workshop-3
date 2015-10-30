@@ -71,7 +71,12 @@ namespace BlackJack.view
             {
                 return MenuChoice.Stand;
             }
-            return MenuChoice.Quit;
+
+            else if (input == 'q'){
+                return MenuChoice.Quit;
+            }
+
+            return MenuChoice.None;
         }
     }
 }

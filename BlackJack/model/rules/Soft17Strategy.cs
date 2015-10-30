@@ -11,13 +11,25 @@ namespace BlackJack.model.rules
 
         public bool DoHit(model.Player a_dealer)
         {
-            if(a_dealer.CalcScore() == 17){
-                foreach(Card c in a_dealer.GetHand()){
-                    if(c.GetValue() == Card.Value.Ace){
-                        return true;
+            int score = 0;
+
+            if (a_dealer.CalcScore() == 17)
+            {
+                foreach (Card c in a_dealer.GetHand())
+                {
+                    score += (int)c.GetValue();
+
+                    if (c.GetValue() == Card.Value.Ace)
+                    {
+                        score += 0;
                     }
                 }
+
+                if(score == 6){
+                    return true;
+                }
             }
+
             return a_dealer.CalcScore() < g_hitLimit;
         }
     }

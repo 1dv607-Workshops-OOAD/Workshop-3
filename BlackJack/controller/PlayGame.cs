@@ -21,9 +21,7 @@ namespace BlackJack.controller
 
         public bool Play()
         {
-            m_view.DisplayWelcomeMessage();
-            m_view.DisplayDealerHand(m_game.GetDealerHand(), m_game.GetDealerScore());
-            m_view.DisplayPlayerHand(m_game.GetPlayerHand(), m_game.GetPlayerScore());
+            RenderGame();
 
             if (m_game.IsGameOver())
             {
@@ -48,12 +46,16 @@ namespace BlackJack.controller
             return input != MenuChoice.Quit;
         }
 
-        public void CardIsDealt(model.Card a_card) 
+        public void CardIsDealt()
         {
+            RenderGame();
+            System.Threading.Thread.Sleep(2000);
+        }
+
+        public void RenderGame() {
             m_view.DisplayWelcomeMessage();
             m_view.DisplayDealerHand(m_game.GetDealerHand(), m_game.GetDealerScore());
             m_view.DisplayPlayerHand(m_game.GetPlayerHand(), m_game.GetPlayerScore());
-            System.Threading.Thread.Sleep(2000);
         }
     }
 }

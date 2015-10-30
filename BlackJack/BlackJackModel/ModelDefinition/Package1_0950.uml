@@ -509,6 +509,22 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="4e97fc96-b4f3-4eba-a976-cc7f062e3e37">
+            <classMoniker
+              Id="a6713820-b5ef-4e7b-9982-6130438f8429"
+              LastKnownName="Card"
+              LastKnownLocation="Package1_0950.uml" />
+          </dependency>
+          <dependency
+            Id="6672cc31-a7f0-4919-9a46-43d9e50e1f06">
+            <interfaceMoniker
+              Id="d0f1c4fc-4d61-444e-a220-57cb2c32c9b0"
+              LastKnownName="BlackJackObserver"
+              LastKnownLocation="Package1_0950.uml" />
+          </dependency>
+        </suppliersInternal>
         <targetEnds>
           <association
             Id="87296099-9a34-44e0-8455-4d19a7dd077d"
